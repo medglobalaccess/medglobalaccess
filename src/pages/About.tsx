@@ -27,13 +27,6 @@ const values = [
   },
 ];
 
-const milestones = [
-  { year: "2018", title: "Founded", description: "Started with a vision to make healthcare accessible" },
-  { year: "2020", title: "1000+ Patients", description: "Successfully treated over 1000 patients" },
-  { year: "2022", title: "Expanded Network", description: "Partnered with 20+ JCI-accredited hospitals" },
-  { year: "2024", title: "Excellence Award", description: "Recognized as top medical tourism facilitator" },
-];
-
 const whyChooseUs = [
   "Personalized treatment plans tailored to your needs",
   "24/7 dedicated support throughout your journey",
@@ -138,34 +131,6 @@ const About = () => {
                   >
                     <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Timeline */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">Our Journey</h2>
-            <p className="text-muted-foreground text-center mb-12">
-              Milestones that shaped our story
-            </p>
-            <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-4 gap-6">
-                {milestones.map((milestone, index) => (
-                  <div key={index} className="relative animate-fade-in-scale" style={{ animationDelay: `${index * 0.15}s` }}>
-                    <Card className="hover-lift group">
-                      <CardContent className="p-6 text-center">
-                        <div className="text-4xl font-bold gradient-text mb-3 group-hover:scale-110 transition-transform">
-                          {milestone.year}
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground mb-2">{milestone.title}</h3>
-                        <p className="text-sm text-muted-foreground">{milestone.description}</p>
-                      </CardContent>
-                    </Card>
-                    {index < milestones.length - 1 && (
-                      <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-accent" />
-                    )}
                   </div>
                 ))}
               </div>

@@ -164,7 +164,7 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Phone / WhatsApp *
                     </label>
-                    <Input required name="phone" type="tel" placeholder="+27 123 456 789" />
+                    <Input required name="phone" type="tel" placeholder="+91 9154262424" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -318,21 +318,42 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-foreground">Phone</div>
-                      <div className="text-sm text-muted-foreground">+27 123 456 789</div>
+                      <div className="text-sm text-muted-foreground">
+                        <a 
+                          href="tel:+919154262424" 
+                          className="relative inline-block hover:text-primary transition-all duration-300 cursor-pointer underline-offset-4 hover:underline decoration-primary/60 hover:decoration-primary hover:scale-105 transform"
+                        >
+                          +91 9154262424
+                        </a>
+                        {", "}
+                        <a 
+                          href="tel:+919154264242" 
+                          className="relative inline-block hover:text-primary transition-all duration-300 cursor-pointer underline-offset-4 hover:underline decoration-primary/60 hover:decoration-primary hover:scale-105 transform"
+                        >
+                          +91 9154264242
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-foreground">Email</div>
-                      <div className="text-sm text-muted-foreground">info@medglobalaccess.com</div>
+                      <div className="text-sm text-muted-foreground">
+                        <a 
+                          href="mailto:info@medglobalaccess.in" 
+                          className="relative inline-block hover:text-primary transition-all duration-300 cursor-pointer underline-offset-4 hover:underline decoration-primary/60 hover:decoration-primary hover:scale-105 transform break-all"
+                        >
+                          info@medglobalaccess.in
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-foreground">Location</div>
-                      <div className="text-sm text-muted-foreground">Mumbai, India</div>
+                      <div className="text-sm text-muted-foreground">Hyderabad, India</div>
                     </div>
                   </div>
                 </div>

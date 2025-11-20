@@ -50,7 +50,9 @@ const ProcessSteps = () => {
                       {index + 1}
                     </div>
                   </div>
-                  <div className="absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 -z-10 hidden lg:block last:hidden" />
+                  {index < steps.length - 1 && (
+                    <div className="absolute top-10 h-0.5 bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 -z-10 hidden lg:block" style={{ left: 'calc(50% + 2.5rem)', width: '16.6rem' }} />
+                  )}
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {step.title}
                   </h3>

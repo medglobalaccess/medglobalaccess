@@ -88,9 +88,9 @@ const Packages = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
             {packages.map((pkg, index) => (
-              <div key={index} className="animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="animate-fade-in-scale h-full" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PackageCard {...pkg} />
               </div>
             ))}

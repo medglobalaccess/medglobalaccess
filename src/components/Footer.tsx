@@ -57,15 +57,34 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2 text-muted-foreground">
                 <Phone className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
-                <span>+27 123 456 789</span>
+                <span>
+                  <a 
+                    href="tel:+919154262424" 
+                    className="relative inline-block hover:text-primary transition-all duration-300 cursor-pointer underline-offset-4 hover:underline decoration-primary/60 hover:decoration-primary"
+                  >
+                    +91 9154262424
+                  </a>
+                  {", "}
+                  <a 
+                    href="tel:+919154264242" 
+                    className="relative inline-block hover:text-primary transition-all duration-300 cursor-pointer underline-offset-4 hover:underline decoration-primary/60 hover:decoration-primary"
+                  >
+                    +91 9154264242
+                  </a>
+                </span>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground">
                 <Mail className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
-                <span>info@medglobalaccess.com</span>
+                <a 
+                  href="mailto:info@medglobalaccess.in" 
+                  className="relative inline-block hover:text-primary transition-all duration-300 cursor-pointer underline-offset-4 hover:underline decoration-primary/60 hover:decoration-primary break-all"
+                >
+                  info@medglobalaccess.in
+                </a>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
-                <span>Mumbai, India</span>
+                <span>Hyderabad, India</span>
               </li>
             </ul>
           </div>
