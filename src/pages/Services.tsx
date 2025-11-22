@@ -14,6 +14,8 @@ import plasticSurgeryImage from "@/assets/plastic-surgery.jpg";
 import pulmonologyImage from "@/assets/pulmonology.jpg";
 import gastroenterologyImage from "@/assets/gastroenterology.jpg";
 import dermatologyImage from "@/assets/dermatology.jpg";
+import ivfImage from "@/assets/ivf.jpg";
+import transplantationImage from "@/assets/transplantation.jpg";
 
 const services = [
   {
@@ -100,18 +102,30 @@ const services = [
     description: "Comprehensive internal medicine, endocrinology, infectious diseases & metabolic disorders",
     image: cardiologyImage,
   },
+  {
+    id: "ivf",
+    title: "IVF & Fertility Treatments",
+    description: "Bringing hope to couples with advanced fertility care and world-class reproductive technology.",
+    image: ivfImage,
+  },
+  {
+    id: "transplantation",
+    title: "Organ Transplantation",
+    description: "Comprehensive Kidney, Liver, and Heart Transplants with high-success outcomes and expert surgical teams.",
+    image: transplantationImage,
+  },
 ];
 
 const Services = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       <section className="pt-32 pb-12 bg-gradient-to-b from-secondary/30 via-background to-secondary/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 gradient-text">

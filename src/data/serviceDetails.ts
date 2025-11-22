@@ -10,6 +10,8 @@ import plasticSurgeryImage from "@/assets/plastic-surgery.jpg";
 import pulmonologyImage from "@/assets/pulmonology.jpg";
 import gastroenterologyImage from "@/assets/gastroenterology.jpg";
 import dermatologyImage from "@/assets/dermatology.jpg";
+import ivfImage from "@/assets/ivf.jpg";
+import transplantationImage from "@/assets/transplantation.jpg";
 
 export const serviceDetails: Record<string, any> = {
   cardiology: {
@@ -339,6 +341,56 @@ export const serviceDetails: Record<string, any> = {
       "Personalized treatment plans",
       "Evidence-based treatments",
       "State-of-the-art facilities",
+    ],
+  },
+  ivf: {
+    title: "IVF & Fertility Treatments",
+    image: ivfImage,
+    description: "Bringing hope to couples with advanced fertility care and world-class reproductive technology.",
+    treatments: [
+      "IVF (In Vitro Fertilization)",
+      "ICSI (Intracytoplasmic Sperm Injection)",
+      "IUI (Intrauterine Insemination)",
+      "Ovulation Induction",
+      "Frozen Embryo Transfer (FET)",
+      "Donor Egg & Donor Sperm Programs",
+      "Blastocyst Culture",
+      "Preimplantation Genetic Testing (PGT-A / PGT-M)",
+      "Laparoscopy & Hysteroscopy for infertility",
+      "Male Infertility Treatments (TESA, PESA, Micro-TESE)",
+    ],
+    whyChoose: [
+      "High IVF success rates with advanced lab technology",
+      "Experienced embryologists & fertility specialists",
+      "World-class IVF lab with strict quality controls",
+      "Personalized fertility treatment plans",
+      "Affordable IVF packages for international couples",
+      "24/7 care, counseling & complete support",
+      "Ethical, transparent treatment process",
+    ],
+  },
+  transplantation: {
+    title: "Advanced Organ Transplantation Services",
+    image: transplantationImage,
+    description: "Comprehensive Kidney, Liver, and Heart Transplants with high-success outcomes and expert surgical teams.",
+    treatments: [
+      "Kidney Transplant (Living & Deceased Donor)",
+      "ABO-incompatible transplant & Paired exchange",
+      "Liver Transplant (Living & Deceased Donor)",
+      "Pediatric liver transplant",
+      "Heart Transplant & VAD support",
+      "Bone marrow transplant",
+      "Corneal transplant",
+      "Combined transplant cases",
+    ],
+    whyChoose: [
+      "Highly skilled transplant surgeons",
+      "Dedicated transplant ICU",
+      "Advanced organ preservation systems",
+      "High survival & success rates",
+      "Strict infection control & monitoring",
+      "Complete donor-recipient evaluation",
+      "International patient support for travel & accommodation",
     ],
   },
 };
