@@ -59,7 +59,7 @@ const Contact = () => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
               <div className="p-1">
                 <iframe
-                  data-tally-src="https://tally.so/embed/lbb8jX?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
+                  data-tally-src="https://tally.so/embed/vGG85g?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"
                   width="100%"
                   height="100%"
