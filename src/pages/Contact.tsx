@@ -7,27 +7,45 @@ import heroImage from "@/assets/hero-medical.jpg";
 
 const Contact = () => {
   useEffect(() => {
-    // Check if script already exists
+    // Tally script loading
     const existingScript = document.querySelector(
       'script[src="https://tally.so/widgets/embed.js"]'
     );
+
+    const loadEmbeds = () => {
+      try {
+        if ((window as any).Tally) {
+          (window as any).Tally.loadEmbeds();
+        }
+      } catch (e) {
+        console.error("Tally load failed", e);
+      }
+    };
 
     if (!existingScript) {
       const script = document.createElement("script");
       script.src = "https://tally.so/widgets/embed.js";
       script.async = true;
-      script.onload = () => {
-        if ((window as any).Tally) {
-          (window as any).Tally.loadEmbeds();
-        }
-      };
+      script.onload = loadEmbeds;
       document.body.appendChild(script);
     } else {
-      // If script exists, refresh embeds
-      if ((window as any).Tally) {
-        (window as any).Tally.loadEmbeds();
-      }
+      loadEmbeds();
     }
+
+    // Fade-in animation
+    const iframe = document.getElementById("tally-iframe");
+    const loader = document.getElementById("tally-loader");
+
+    const handleLoad = () => {
+      if (loader) loader.style.display = "none";
+      if (iframe) iframe.style.opacity = "1";
+    };
+
+    iframe?.addEventListener("load", handleLoad);
+
+    return () => {
+      iframe?.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   return (
@@ -56,20 +74,28 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Form Section */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-              <div className="p-1">
-                <iframe
-                  data-tally-src="https://tally.so/embed/vGG85g?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  style={{ minHeight: "800px" }}
-                  title="MedGlobalAccess – Medical Treatment Inquiry Form"
-                ></iframe>
+            <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-0 overflow-hidden relative">
+              {/* Loading Skeleton */}
+              <div
+                id="tally-loader"
+                className="absolute inset-0 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 text-lg font-medium"
+              >
+                Loading form...
               </div>
+
+              {/* Embedded Tally Form */}
+              <iframe
+                data-tally-src="https://tally.so/embed/vGG85g?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                style={{ minHeight: "900px", opacity: 0, transition: "opacity 0.5s ease-in-out" }}
+                id="tally-iframe"
+                title="MedGlobalAccess – Medical Treatment Inquiry Form"
+              ></iframe>
             </div>
           </div>
 
