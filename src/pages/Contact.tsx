@@ -7,15 +7,27 @@ import heroImage from "@/assets/hero-medical.jpg";
 
 const Contact = () => {
   useEffect(() => {
-    // Load Tally embed script
-    const script = document.createElement("script");
-    script.src = "https://tally.so/widgets/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+    // Check if script already exists
+    const existingScript = document.querySelector(
+      'script[src="https://tally.so/widgets/embed.js"]'
+    );
 
-    return () => {
-      document.body.removeChild(script);
-    };
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://tally.so/widgets/embed.js";
+      script.async = true;
+      script.onload = () => {
+        if ((window as any).Tally) {
+          (window as any).Tally.loadEmbeds();
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      // If script exists, refresh embeds
+      if ((window as any).Tally) {
+        (window as any).Tally.loadEmbeds();
+      }
+    }
   }, []);
 
   return (
@@ -47,7 +59,7 @@ const Contact = () => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
               <div className="p-1">
                 <iframe
-                  data-tally-src="https://tally.so/embed/vGG85g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  data-tally-src="https://tally.so/embed/lbb8jX?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
                   loading="lazy"
                   width="100%"
                   height="100%"
